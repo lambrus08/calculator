@@ -33,14 +33,30 @@ $(document).ready(function () {
 
 */
 
-function callback(type, value, item){
-    switch(value){
-        case undefined:
-            $("#display").html("");
+var myCalculator = new calculator(callBack); // setting global and object
+
+function callBack(value, type, item){//function to grab values from display,also setting with parameters
+    switch (value) {//switch statement to pick a block of code expression is set to my value parameter
+        case undefined://case made for undefined, if undefined matches then it will display code below
+            $("#display").html("");//targeting my display and leaving it with open strings
             break;
         default:
-            $("#display").html(value);
+            $("#display").html(value);//if defined then execute by targeting my displays value set my function parameter
             break;
     }
-
 }
+
+$("document").ready(function(){// running function once dom is ready
+    $("button").on("click", function(){//targeting button running a function once clicked
+        var val = $(this).val();// making variable for button value
+        switch  (val){//switch inside statement is my value field
+            case "CE":// if case come CE is displayed then will clear my calculator
+                myCalculator.allClear();//clears all calculator
+                break;//breaks out of switch block
+            default : myCalculator.addItem($(this).val())//our default is to add what ever is out display value and
+                break;//stored in myCalculator
+
+        }
+
+    });
+});
