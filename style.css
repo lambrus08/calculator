@@ -1,13 +1,23 @@
+body{
+    margin: 0 auto;
+    width:100vw;
+}
+
+
+
 .container-fluid {
     font-size: 3em;
 
 }
 
 
+#display{
+    border: lavender;
+    text-align: right;
+    font-size: 50px;
 
-.display {
-    border: black 2px solid;
 }
+
 .col-sm-6{
     border: black 4px solid;
 }
