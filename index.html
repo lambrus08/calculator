@@ -8,8 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="http://Learning-Fuze.github.io/calculator/calculator.js"></script>
-    <script src="main.js"></script>
+   <!-- <script src="http://Learning-Fuze.github.io/calculator/calculator.js"></script>-->
+
 
     <title>Calculator</title>
 </head>
@@ -28,84 +28,85 @@
 
         </div>
         <div class="row center-block reset">
-            <div class="col-sm-6 col-xs-6 nopadding">
-                <button class="key">C</button>
+            <div class="col-sm-6 col-xs-6 key nopadding">
+                <button >C</button>
             </div>
-            <div class="col-sm-6 col-xs-6 nopadding">
-                <button class="key">CE</button>
+            <div class="col-sm-6 col-xs-6 key nopadding">
+                <button >CE</button>
             </div>
         </div>
         <div class="row center-block digits-operators-container">
-            <div class="col-sm-9 col-xs-9 digits">
+            <div class="col-sm-9 col-xs-9 ">
                 <div class="row top">
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="7">7</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button  value="7">7</button>
                     </div>
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="8">8</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button  value="8">8</button>
                     </div>
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="9">9</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button  value="9">9</button>
                     </div>
                 </div>
                 <div class="row middle">
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="4">4</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button  value="4">4</button>
                     </div>
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="5">5</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button  value="5">5</button>
                     </div>
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="6">6</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button value="6">6</button>
                     </div>
                 </div>
                 <div class="row bottom">
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="1">1</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button value="1">1</button>
                     </div>
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="2">2</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button value="2">2</button>
                     </div>
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="3">3</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button  value="3">3</button>
                     </div>
                 </div>
-                <div class="row equals">
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key"  value="0">0</button>
+                <div class="row last">
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button  value="0">0</button>
                     </div>
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value=".">.</button>
+                    <div class="col-sm-4 col-xs-4 key nopadding">
+                        <button  value=".">.</button>
                     </div>
-                    <div class="col-sm-4 col-xs-4 nopadding">
-                        <button class="key" value="=">=</button>
+                    <div class="col-sm-4 col-xs-4 equals nopadding">
+                        <button  value="=">=</button>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-xs-3 operators">
+            <div class="col-sm-3 col-xs-3 operators-container">
                 <div class="row">
-                    <div class="col-sm-12 col-xs-12 nopadding div-container">
-                        <button class="key" id="division" value="/">/</button>
+                    <div class="col-sm-12 col-xs-12 nopadding operator">
+                        <button id="division" value="/">/</button>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 col-xs-12 nopadding multi-container">
-                        <button class="key" id="multiply" value="x">x</button>
+                    <div class="col-sm-12 col-xs-12 nopadding operator">
+                        <button id="multiply" value="x">x</button>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 col-xs-12 nopadding subs-container">
-                        <button class="key" id="subtract" value="-">-</button>
+                    <div class="col-sm-12 col-xs-12 nopadding operator ">
+                        <button  id="subtract" value="-">-</button>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 col-xs-12 nopadding add-container">
-                        <button class="key" id="addition" value="+">+</button>
+                    <div class="col-sm-12 col-xs-12 nopadding operator ">
+                        <button id="addition" value="+">+</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="main.js"></script>
 </body>
 </html>
