@@ -166,8 +166,9 @@ function input_equal() {
             op = calc_values[i];
         }
     }
-
+    showDisplay(result);
 
 }
-
-
+function showDisplay(input_number) {
+    $("#display").text(input_number);
+}
