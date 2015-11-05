@@ -89,8 +89,26 @@ $('document').ready(function () {
         console.log("equals was clicked", $(this));
         input_equal(num1, op, num2);
     });
+    $(".reset").on("click", "button", function(){
+        console.log('button clicked');
+        reset_all();
+
+
+    });
 
 });
+
+function reset_all(){
+    num1 = null;
+    num2 = null;
+    calc_values = [''];
+    op = null;
+    calc_index = 0;
+    showDisplay(calc_values);
+    $("#display").text("0");
+
+}
+
 
 //the function to be called
 function input_number(input) {
@@ -172,3 +190,4 @@ function input_equal() {
 function showDisplay(input_number) {
     $("#display").text(input_number);
 }
+
