@@ -1,52 +1,44 @@
-body{
-    margin: 0 auto;
-    width:100vw;
+#buttonHolder {
+    margin: 0;
 }
 
-
-
-.container-fluid {
-    font-size: 3em;
-
-}
-
-
-#display{
-    border: lavender;
+.form-control {
+    height: 60px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: inset 3px 3px rgba(0, 0, 0, 0.2);
     text-align: right;
-    font-size: 50px;
+    font-size: 20px;
+}
+
+.button {
+    padding: 7px;
+    border-radius: 8px;
 
 }
 
-.col-sm-6{
-    border: black 4px solid;
+.button:active input {
+    -webkit-transform: translate(0, 4px);
+    -moz-transform: translate(0, 4px);
+    -o-transform: translate(0, 4px);
+    transform: translate(0, 4px);
+
 }
 
-
-.operators-container {
-    border: black 4px solid
-}
-
-
-
-.col-sm-4 {
-    border: black 5px solid
-}
-.col-sm-12 {
-    border: black 4px solid
-}
-
-button {
-    padding: 0;
+.btn-lg {
     border: none;
-    background: none;
-    width: 100%;
-
-
+}
+input:focus {
+    outline: 0;
+}
+.inputs {
+    -webkit-box-shadow: 0px 18px 0px 0px rgba(120,116,120,0.71);
+    -moz-box-shadow: 0px 18px 0px 0px rgba(120,116,120,0.71);
+    box-shadow: 0px 8px 0px 0px rgba(120,116,120,0.71);
 
 }
-
-.nopadding {
-    padding: 0 !important;
-    margin: 0 !important;
+.calBase {
+    box-shadow: 0 0 0 1px #ebebeb
+    inset, 0 0 0 2px rgba(255,255,255,0.10)
+    inset, 0 4px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0,0,0,.2);
 }
