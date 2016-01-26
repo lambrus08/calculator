@@ -9,7 +9,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
-   <!-- <script src="http://Learning-Fuze.github.io/calculator/calculator.js"></script>-->
+
 
 
     <title>Calculator</title>
@@ -23,14 +23,11 @@
                 <div class="col-md-12">
                     <input type="text" class="form-control" id="screenDisplay" value="0">
                     <div class="row" id="buttonHolder">
-                        <div class="col-md-3 col-xs-3 buttons">
-                            <input type="button" class="btn-lg btn-block " value="CE">
+                        <div class="col-md-6 col-xs-6 buttons">
+                            <input type="button" class="btn-lg btn-block" value="CE" id="clearAll">
                         </div>
                         <div class="col-md-3 col-xs-3 buttons">
-                            <input type="button" class="btn-lg btn-block " value="C">
-                        </div>
-                        <div class="col-md-3 col-xs-3 buttons">
-                            <input type="button" class="btn-lg btn-block operator" value="%">
+                            <input type="button" class="btn-lg btn-block operator" value="C">
                         </div>
                         <div class="col-md-3 col-xs-3 buttons">
                             <input type="button" class="btn-lg btn-block operator" value="/">
@@ -75,7 +72,7 @@
                             <input type="button" class="btn-lg btn-block operand" value="0">
                         </div>
                         <div class="col-md-3 col-xs-3 buttons">
-                            <input type="button" class="btn-lg btn-block " value=".">
+                            <input type="button" class="btn-lg btn-block " value="." id="decimal">
                         </div>
                         <div class="col-md-3 col-xs-3 buttons">
                             <input type="button" class="btn-lg btn-block equals" value="=">
