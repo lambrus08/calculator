@@ -5,6 +5,7 @@ var inputStorage = [''];
 var splicedStorage = [];
 var storageArrayIndex = 0;
 var decimal = false;
+var equalsPressed = false;
 
 
 $(document).ready(function () {
@@ -49,6 +50,9 @@ $(document).ready(function () {
 );
 
 function addOperandsToArray(number) {
+    if(isNaN(inputStorage[storageArrayIndex]) === true){
+        return
+    }
     if (typeof inputStorage[storageArrayIndex] === 'number') {
         inputStorage[storageArrayIndex] = number;
     }
@@ -57,12 +61,17 @@ function addOperandsToArray(number) {
         inputStorage[storageArrayIndex] += number;
     }
 
+
     console.log('current array value is, operand pressed:', inputStorage);
     $('#screenDisplay').val(inputStorage[storageArrayIndex]);
 
 }
 
 function addOperatorsToArray(opInput) {
+
+    if(isNaN(inputStorage[storageArrayIndex]) === true){
+        return
+    }
 
     if (inputStorage[inputStorage.length - 1] === '')
     // this will execute is last item pressed was an operator
@@ -75,9 +84,12 @@ function addOperatorsToArray(opInput) {
 
     }
     else {
-        if (inputStorage.length === 3) {
+
+
+        if (inputStorage.length === 3 && equalsPressed === false) {
             equalsCalc();
         }
+
         console.log('test one two three;', opInput);
         storageArrayIndex++;
         inputStorage[storageArrayIndex] = opInput;
@@ -85,8 +97,11 @@ function addOperatorsToArray(opInput) {
         storageArrayIndex++;
         inputStorage[storageArrayIndex] = '';
         console.log('current data inside storage array:', inputStorage);
-    }
 
+    } //end of else statement
+
+
+    equalsPressed = false;
 }
 
 function addDecimal() {
@@ -119,8 +134,8 @@ function calculation(numb1, operator, numb2) {
             break;
 
         case '/':
-            if (numb2 === 0) {
-                return 'error';
+            if (numb2 === '0') {
+                return 'Error';
             } else {
                 total = Number(numb1) / Number(numb2);
             }
@@ -147,49 +162,47 @@ function equalsCalc() {
 //          if yes, copy spliceStorage into inputStorage starting from element 2
 //          if no, we can't do math, show error
 // if not, exit with error
-
-    /*if (inputStorage.length === 3 && inputStorage[inputStorage.length - 1] === 'string')
-    {*/
-
-        for (i = 0; inputStorage.length > 1 && i < inputStorage.length; i++)
-            // loop which looks inside my input array.  If the length of array
-            // is greater than 1 and index of array is less than the array length then
-            // we increment arrays input
-        {
-            if (!isNaN(inputStorage[i])) {
-                if (numb1 === null) {
-                    numb1 = inputStorage[i];
-
-                } else {
-                    numb2 = inputStorage[i];
-                    result = calculation(numb1, operator, numb2);
-                    inputStorage[0] = result;
-                    splicedStorage = inputStorage.splice(i - 1, 2);
-                    if (typeof inputStorage[0] === 'number' && inputStorage.length === 1) {
-                        console.log('spliced storage = ', splicedStorage);
-                        inputStorage.splice(1, 2, splicedStorage[0], splicedStorage[1]);
-                        console.log('concat is complete', inputStorage);
-                    }
-
-                    console.log('equals pressed, array current status:', inputStorage);
-                    numb1 = null;
-                    numb2 = null;
-                    operator = null;
-                    storageArrayIndex = 0;
-                }
-
-            } else {
-                operator = inputStorage[i];
-            }
-        }
-
-
-   /* }else if(inputStorage.length === 3 && inputStorage[inputStorage.length -1] === ''){
-        console.log('else if statement: empty string');
+    if (inputStorage.length === 1){
+        return
+    }
+    if (!(inputStorage.length === 3 && !isNaN(parseFloat(inputStorage[inputStorage.length - 1])))) {
 
         inputStorage[2] = inputStorage[0];
-    }*/
-    showDisplay(result);
+
+    }
+    for (i = 0; inputStorage.length > 1 && i < inputStorage.length; i++)
+        // loop which looks inside my input array.  If the length of array
+        // is greater than 1 and index of array is less than the array length then
+        // we increment arrays input
+    {
+        if (!isNaN(inputStorage[i])) {
+            if (numb1 === null) {
+                numb1 = inputStorage[i];
+
+            } else {
+                numb2 = inputStorage[i];
+                result = calculation(numb1, operator, numb2);
+                inputStorage[0] = result;
+                equalsPressed = true;
+                splicedStorage = inputStorage.splice(i - 1, 2);
+                if (typeof inputStorage[0] === 'number' && inputStorage.length === 1) {
+                    console.log('spliced storage = ', splicedStorage);
+                    inputStorage.splice(1, 2, splicedStorage[0], splicedStorage[1]);
+                    console.log('concat is complete', inputStorage);
+                }
+
+                console.log('equals pressed, array current status:', inputStorage);
+                numb1 = null;
+                numb2 = null;
+                operator = null;
+                storageArrayIndex = 0;
+            }
+            showDisplay(result);
+        } else {
+            operator = inputStorage[i];
+        }
+    }
+
 
 }
 
