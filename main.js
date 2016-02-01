@@ -41,7 +41,8 @@ $(document).ready(function () {
 
         $('#clear').on('click', function (){
             console.log('clear was clicked');
-            enableDecimal()
+            enableDecimal();
+            clear();
         });
 
         $('#decimal').on('click', function () {
@@ -215,7 +216,12 @@ function equalsCalc() {
 function showDisplay(currentInput) {
     $('#screenDisplay').val(currentInput);
 }
-
+function clear (){
+    numb1 = null;
+    numb2 = null;
+    operator = null;
+    $('#screenDisplay').val('0');
+}
 function clearAll() {
     numb1 = null;
     numb2 = null;
