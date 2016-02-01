@@ -39,6 +39,11 @@ $(document).ready(function () {
             enableDecimal()
         });
 
+        $('#clear').on('click', function (){
+            console.log('clear was clicked');
+            enableDecimal()
+        });
+
         $('#decimal').on('click', function () {
             console.log('decimal clicked');
             var decimal = $(this).val();
@@ -50,7 +55,7 @@ $(document).ready(function () {
 );
 
 function addOperandsToArray(number) {
-    if(isNaN(inputStorage[storageArrayIndex]) === true){
+    if(inputStorage[storageArrayIndex] === 'Error'){
         return
     }
     if (typeof inputStorage[storageArrayIndex] === 'number') {
@@ -69,7 +74,7 @@ function addOperandsToArray(number) {
 
 function addOperatorsToArray(opInput) {
 
-    if(isNaN(inputStorage[storageArrayIndex]) === true){
+    if(inputStorage[storageArrayIndex] === 'Error'){
         return
     }
 
@@ -219,4 +224,3 @@ function clearAll() {
     storageArrayIndex = 0;
     $('#screenDisplay').val('0');
 }
-
