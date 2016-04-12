@@ -26,9 +26,7 @@
 
 }
 
-.btn-lg {
-    border: none;
-}
+
 input:focus {
     outline: 0;
 }
@@ -36,6 +34,7 @@ input:focus {
     -webkit-box-shadow: 0px 18px 0px 0px rgba(120,116,120,0.71);
     -moz-box-shadow: 0px 18px 0px 0px rgba(120,116,120,0.71);
     box-shadow: 0px 8px 0px 0px rgba(120,116,120,0.71);
+
 
 }
 .calBase {
